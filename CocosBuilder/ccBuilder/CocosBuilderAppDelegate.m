@@ -857,6 +857,29 @@ static BOOL hideAllToNextSeparator;
 
 #pragma mark Document handling
 
+
+- (void)saveAllDirtyDocuments
+{
+    CCBDocument * currentDocumentBeingEdited = self.currentDocument;
+    
+    NSArray* docs = [tabView tabViewItems];
+    for (int i = 0; i < [docs count]; i++)
+    {
+        CCBDocument* doc = [(NSTabViewItem*)[docs objectAtIndex:i] identifier];
+        if (doc.isDirty && (doc.fileName)) {
+            NSLog(@"auto-saving changed document %@ ..", [doc fileName]);
+            [self switchToDocument:doc];
+            [self saveFile:doc.fileName];
+        }
+    }
+    
+    if (currentDocumentBeingEdited) {
+        [self switchToDocument:currentDocumentBeingEdited];
+    }
+}
+
+
+
 - (BOOL) hasDirtyDocument
 {
     NSArray* docs = [tabView tabViewItems];
@@ -2039,18 +2062,21 @@ static BOOL hideAllToNextSeparator;
 
 - (IBAction) saveDocument:(id)sender
 {
-    if (currentDocument && currentDocument.fileName)
-    {
-        [self saveFile:currentDocument.fileName];
-    }
-    else
-    {
-        [self saveDocumentAs:sender];
-    }
+    [self saveAllDirtyDocuments];
+//    if (currentDocument && currentDocument.fileName)
+//    {
+//        [self saveFile:currentDocument.fileName];
+//    }
+//    else
+//    {
+//        [self saveDocumentAs:sender];
+//    }
 }
 
 - (void) publishAndRun:(BOOL)run
 {
+    [self saveAllDirtyDocuments];
+    
     CCBWarnings* warnings = [[[CCBWarnings alloc] init] autorelease];
     warnings.warningsDescription = @"Publisher Warnings";
     
@@ -2205,6 +2231,7 @@ static BOOL hideAllToNextSeparator;
 
 - (IBAction) menuCloseProject:(id)sender
 {
+    [self saveAllDirtyDocuments];
     [self closeProject];
 }
 
@@ -2974,6 +3001,8 @@ static BOOL hideAllToNextSeparator;
 
 - (IBAction) menuQuit:(id)sender
 {
+    [self saveAllDirtyDocuments];
+    
     if ([self windowShouldClose:self])
     {
         [playerController stopPlayer];
