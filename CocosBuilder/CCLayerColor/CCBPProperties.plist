@@ -38,7 +38,7 @@
 		</dict>
 		<dict>
 			<key>defaultSerialization</key>
-			<integer>255</integer>
+			<integer>0</integer>
 			<key>animatable</key>
 			<true/>
 			<key>default</key>
