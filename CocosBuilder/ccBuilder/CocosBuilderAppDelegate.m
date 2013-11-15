@@ -900,8 +900,8 @@ static BOOL hideAllToNextSeparator;
     for (int i = 0; i < [docs count]; i++)
     {
         CCBDocument* doc = [(NSTabViewItem*)[docs objectAtIndex:i] identifier];
-        if (doc.isDirty && (doc.fileName)) {
-            NSLog(@"auto-saving changed document %@ ..", [doc fileName]);
+        if ((doc.fileName) {
+            NSLog(@"auto-saving document %@ ..", [doc fileName]);
             [self switchToDocument:doc];
             [self saveFile:doc.fileName];
         }
