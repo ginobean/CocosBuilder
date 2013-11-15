@@ -37,6 +37,8 @@
 			<string>color</string>
 		</dict>
 		<dict>
+			<key>defaultSerialization</key>
+			<integer>0</integer>
 			<key>animatable</key>
 			<true/>
 			<key>default</key>
