@@ -747,6 +747,8 @@
     
     // JavaScript or not
     [self writeBool:jsControlled];
+
+    NSLog(@"(ccbi file version is %d)", kCCBXVersion);
 }
 
 - (void) writeStringCache
