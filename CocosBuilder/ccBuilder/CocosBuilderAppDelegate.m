@@ -900,7 +900,7 @@ static BOOL hideAllToNextSeparator;
     for (int i = 0; i < [docs count]; i++)
     {
         CCBDocument* doc = [(NSTabViewItem*)[docs objectAtIndex:i] identifier];
-        if ((doc.fileName) {
+        if (doc.fileName) {
             NSLog(@"auto-saving document %@ ..", [doc fileName]);
             [self switchToDocument:doc];
             [self saveFile:doc.fileName];
@@ -2180,7 +2180,6 @@ static BOOL hideAllToNextSeparator;
 
 - (IBAction) saveAllDocuments:(id)sender
 {
-<<<<<<< HEAD
     // Save all JS files
     //[[NSDocumentController sharedDocumentController] saveAllDocuments:sender]; //This API have no effects
     NSArray* JSDocs = [[NSDocumentController sharedDocumentController] documents];
