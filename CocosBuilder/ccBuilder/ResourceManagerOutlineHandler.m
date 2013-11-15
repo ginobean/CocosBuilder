@@ -366,11 +366,17 @@
 #warning Hackish solution to make multiple selections look good
     NSLog(@"needsDisplay!");
     [resourceList setNeedsDisplay];
+
+    // allow user to select a scene by single clicking it.
+    [self doubleClicked:nil];
 }
 
 - (void) doubleClicked:(id)sender
 {
     id item = [resourceList itemAtRow:[resourceList clickedRow]];
+    if (! item) {
+        item = [resourceList itemAtRow:[resourceList selectedRow]];
+    }
     
     if ([item isKindOfClass:[RMResource class]])
     {
