@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		523061D11837B89E00BE2374 /* NSFileManager+MyCustom.m in Sources */ = {isa = PBXBuildFile; fileRef = 523061D01837B89E00BE2374 /* NSFileManager+MyCustom.m */; };
 		527C921A18369A3E0047A17A /* CocosBuilder.icns in Resources */ = {isa = PBXBuildFile; fileRef = 527C921918369A3E0047A17A /* CocosBuilder.icns */; };
 		581130601639C52500A86D70 /* seq-startmarker.png in Resources */ = {isa = PBXBuildFile; fileRef = 5811305F1639C52000A86D70 /* seq-startmarker.png */; };
 		581BCFE8162DADE7007DE600 /* CCBSplitHorizontalView.m in Sources */ = {isa = PBXBuildFile; fileRef = 581BCFE7162DADE7007DE600 /* CCBSplitHorizontalView.m */; };
@@ -866,6 +867,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		523061CF1837B89E00BE2374 /* NSFileManager+MyCustom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSFileManager+MyCustom.h"; sourceTree = "<group>"; };
+		523061D01837B89E00BE2374 /* NSFileManager+MyCustom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSFileManager+MyCustom.m"; sourceTree = "<group>"; };
 		527C921918369A3E0047A17A /* CocosBuilder.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = CocosBuilder.icns; sourceTree = "<group>"; };
 		5811305E1639BF1200A86D70 /* SequencerTimelineDrawDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SequencerTimelineDrawDelegate.h; sourceTree = "<group>"; };
 		5811305F1639C52000A86D70 /* seq-startmarker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "seq-startmarker.png"; sourceTree = "<group>"; };
@@ -3047,6 +3050,8 @@
 				E3127AA416C1D8E600D09AA4 /* CCBDirectoryComparer.m */,
 				835DAF3F17156161003A2F7B /* CCBHTTPServer.h */,
 				835DAF4017156161003A2F7B /* CCBHTTPServer.m */,
+				523061CF1837B89E00BE2374 /* NSFileManager+MyCustom.h */,
+				523061D01837B89E00BE2374 /* NSFileManager+MyCustom.m */,
 			);
 			name = Publishing;
 			sourceTree = "<group>";
@@ -5202,6 +5207,7 @@
 				E3893C981666B9F500299482 /* CCDrawNode.m in Sources */,
 				E3893C991666B9F500299482 /* ccFPSImages.m in Sources */,
 				E3893C9A1666B9F500299482 /* CCPhysicsDebugNode.m in Sources */,
+				523061D11837B89E00BE2374 /* NSFileManager+MyCustom.m in Sources */,
 				E3893C9B1666B9F500299482 /* CCPhysicsSprite.mm in Sources */,
 				E39108081679365600391C3B /* MaxRectsBinPack.cpp in Sources */,
 				E39108091679365600391C3B /* Rect.cpp in Sources */,

@@ -27,6 +27,10 @@
 #import "AppDelegate.h"
 #import "ServerController.h"
 
+#import "NSFileManager+MyCustom.h"
+
+
+
 static PlayerStatusLayer* sharedPlayerStatusLayer = NULL;
 
 @implementation PlayerStatusLayer
@@ -88,7 +92,7 @@ static PlayerStatusLayer* sharedPlayerStatusLayer = NULL;
 - (void) pressedReset:(id)sender
 {
     // Remove the ccb directory
-    [[NSFileManager defaultManager] removeItemAtPath:[CCBReader ccbDirectoryPath] error:NULL];
+    [[NSFileManager defaultManager] safeRemoveItemAtPath:[CCBReader ccbDirectoryPath] error:NULL];
     
     btnRun.isEnabled = NO;
     btnReset.isEnabled = NO;

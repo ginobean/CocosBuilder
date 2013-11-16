@@ -41,6 +41,9 @@
 #import "ResourceManager.h"
 #import "ResourceManagerUtil.h"
 
+#import "NSFileManager+MyCustom.h"
+
+
 @implementation CCBPublisher
 
 @synthesize publishFormat;
@@ -260,7 +263,7 @@
     // Remove old file
     if ([fm fileExistsAtPath:dstFile])
     {
-        [fm removeItemAtPath:dstFile error:NULL];
+        [fm safeRemoveItemAtPath:dstFile error:NULL];
     }
     
     // Check if file should be converted
@@ -353,7 +356,7 @@
         srcSpriteSheetDate = [self latestModifiedDateForDirectory:dir];
         
         // Clear temporary sprite sheet directory
-        [fm removeItemAtPath:[projectSettings tempSpriteSheetCacheDirectory] error:NULL];
+        [fm safeRemoveItemAtPath:[projectSettings tempSpriteSheetCacheDirectory] error:NULL];
     }
     
     // Create the directory if it doesn't exist
@@ -518,7 +521,7 @@
                     [ad modalStatusWindowUpdateStatusText:[NSString stringWithFormat:@"Publishing %@...", fileName]];
                     
                     // Remove old file
-                    [fm removeItemAtPath:dstFile error:NULL];
+                    [fm safeRemoveItemAtPath:dstFile error:NULL];
                     
                     // Copy the file
                     BOOL sucess = [self publishCCBFile:filePath to:dstFile];
@@ -841,7 +844,7 @@
     NSFileManager *manager = [NSFileManager defaultManager];
     
     // Remove the old file
-    [manager removeItemAtPath:file error:NULL];
+    [manager safeRemoveItemAtPath:file error:NULL];
     
     // Zip it up!
     NSTask* zipTask = [[NSTask alloc] init];
@@ -864,7 +867,7 @@
     NSFileManager *manager = [NSFileManager defaultManager];
     
     // Remove the old file
-    [manager removeItemAtPath:file error:NULL];
+    [manager safeRemoveItemAtPath:file error:NULL];
     
     // Create diff
     CCBDirectoryComparer* dc = [[[CCBDirectoryComparer alloc] init] autorelease];
@@ -900,13 +903,13 @@
         NSString* publishDir;
         
         publishDir = [projectSettings.publishDirectory absolutePathFromBaseDirPath:[projectSettings.projectPath stringByDeletingLastPathComponent]];
-        [fm removeItemAtPath:publishDir error:NULL];
+        [fm safeRemoveItemAtPath:publishDir error:NULL];
         
         publishDir = [projectSettings.publishDirectoryAndroid absolutePathFromBaseDirPath:[projectSettings.projectPath stringByDeletingLastPathComponent]];
-        [fm removeItemAtPath:publishDir error:NULL];
+        [fm safeRemoveItemAtPath:publishDir error:NULL];
         
         publishDir = [projectSettings.publishDirectoryHTML5 absolutePathFromBaseDirPath:[projectSettings.projectPath stringByDeletingLastPathComponent]];
-        [fm removeItemAtPath:publishDir error:NULL];
+        [fm safeRemoveItemAtPath:publishDir error:NULL];
     }
     
     if (!runAfterPublishing)
@@ -1130,7 +1133,7 @@
 {
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
     NSString* ccbChacheDir = [[paths objectAtIndex:0] stringByAppendingPathComponent:@"com.cocosbuilder.CocosBuilder"];
-    [[NSFileManager defaultManager] removeItemAtPath:ccbChacheDir error:NULL];
+    [[NSFileManager defaultManager] safeRemoveItemAtPath:ccbChacheDir error:NULL];
 }
 
 - (void) dealloc

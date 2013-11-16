@@ -5,6 +5,9 @@
 #import <sys/xattr.h>
 #import <libkern/OSAtomic.h>
 
+#import "NSFileManager+MyCustom.h"
+
+
 /**
  * Welcome to Cocoa Lumberjack!
  * 
@@ -172,7 +175,7 @@
 		
 		NSLogInfo(@"DDLogFileManagerDefault: Deleting file: %@", logFileInfo.fileName);
 		
-		[[NSFileManager defaultManager] removeItemAtPath:logFileInfo.filePath error:nil];
+		[[NSFileManager defaultManager] safeRemoveItemAtPath:logFileInfo.filePath error:nil];
 	}
 }
 
