@@ -233,8 +233,9 @@
     
     if ([dstFile isEqualToString:srcFile])
     {
-        [warnings addWarningWithDescription:@"Publish will overwrite file in resource directory." isFatal:YES];
-        return NO;
+        NSString *msg = [NSString stringWithFormat:@"warning: publish will skip overwrite of file %@ in resource directory..", dstFile];
+        [warnings addWarningWithDescription:msg isFatal:NO];
+        return YES;
     }
     
     // Copy auto-sized images
@@ -508,8 +509,9 @@
                 
                 if ([dstFile isEqualToString:filePath])
                 {
-                    [warnings addWarningWithDescription:@"Publish will overwrite files in resource directory." isFatal:YES];
-                    return NO;
+                    NSString *msg = [NSString stringWithFormat:@"warning: publish will skip overwrite of file %@ in resource directory..", dstFile];
+                    [warnings addWarningWithDescription:msg isFatal:NO];
+                    return YES;
                 }
                 
                 NSDate* srcDate = [CCBFileUtil modificationDateForFile:filePath];
