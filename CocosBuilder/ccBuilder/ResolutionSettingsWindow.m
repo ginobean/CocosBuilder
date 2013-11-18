@@ -35,6 +35,10 @@
     
     predefinedResolutions = [[NSMutableArray alloc] init];
     
+    [predefinedResolutions addObject:[ResolutionSetting settingHDTV]];
+    [predefinedResolutions addObject:[ResolutionSetting settingHDTVLandscape]];
+    [predefinedResolutions addObject:[ResolutionSetting settingHDTVPortrait]];
+    
     // iOS
     [predefinedResolutions addObject:[ResolutionSetting settingIPhone]];
     [predefinedResolutions addObject:[ResolutionSetting settingIPhoneLandscape]];

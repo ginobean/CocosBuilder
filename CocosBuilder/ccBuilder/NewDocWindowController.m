@@ -37,9 +37,13 @@
 
 - (void) addFullScreenResolutions
 {
+    ResolutionSetting* hdtvLandscape = [ResolutionSetting settingHDTVLandscape];
+    hdtvLandscape.enabled = YES;
+    [resolutionsController addObject:hdtvLandscape];
+    [resolutionsController addObject:[ResolutionSetting settingHDTVPortrait]];
+    
     // iOS resolutions
     ResolutionSetting* iPhoneLandscape = [ResolutionSetting settingIPhoneLandscape];
-    iPhoneLandscape.enabled = YES;
     [resolutionsController addObject:iPhoneLandscape];
     [resolutionsController addObject:[ResolutionSetting settingIPhonePortrait]];
     [resolutionsController addObject:[ResolutionSetting settingIPhone5Landscape]];
@@ -62,9 +66,12 @@
 
 - (void) addCustomSizeScreenResolutions
 {
+    ResolutionSetting* hdtv = [ResolutionSetting settingHDTV];
+    hdtv.enabled = YES;
+    [resolutionsController addObject:hdtv];
+    
     // iOS resolutions
     ResolutionSetting* iPhone = [ResolutionSetting settingIPhone];
-    iPhone.enabled = YES;
     [resolutionsController addObject:iPhone];
     [resolutionsController addObject:[ResolutionSetting settingIPad]];
     

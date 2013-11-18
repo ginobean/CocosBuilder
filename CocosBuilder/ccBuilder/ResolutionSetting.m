@@ -106,6 +106,43 @@
     [super dealloc];
 }
 
+
++ (ResolutionSetting*) settingHDTV
+{
+    ResolutionSetting* setting = [[[ResolutionSetting alloc] init] autorelease];
+    
+    setting.name = @"hdtv";
+    setting.width = 0;
+    setting.height = 0;
+    setting.ext = @" ";
+    setting.scale = 1;
+    
+    return setting;
+}
+
++ (ResolutionSetting*) settingHDTVLandscape
+{
+    ResolutionSetting* setting = [self settingHDTV];
+    
+    setting.name = @"hdtv Landscape";
+    setting.width = 1280;
+    setting.height = 720;
+    
+    return setting;
+}
+
++ (ResolutionSetting*) settingHDTVPortrait
+{
+    ResolutionSetting* setting = [self settingHDTV];
+    
+    setting.name = @"hdtv Portrait";
+    setting.width = 720;
+    setting.height = 1280;
+    
+    return setting;
+}
+
+
 + (ResolutionSetting*) settingIPhone
 {
     ResolutionSetting* setting = [[[ResolutionSetting alloc] init] autorelease];
