@@ -4892,6 +4892,7 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/libs/MMMarkdown\"",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_NAME = CocosBuilder;
 				WRAPPER_EXTENSION = app;
 			};
@@ -4923,6 +4924,7 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/libs/MMMarkdown\"",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_NAME = CocosBuilder;
 				WRAPPER_EXTENSION = app;
 			};
