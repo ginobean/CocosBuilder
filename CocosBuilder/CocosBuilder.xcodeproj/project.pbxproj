@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5296B22B183A7B44003D8F86 /* CocosBuilder.icns in Resources */ = {isa = PBXBuildFile; fileRef = 5296B22A183A7B44003D8F86 /* CocosBuilder.icns */; };
 		77055FB513D0E5CA009DD63A /* logo-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 77055FB313D0E5CA009DD63A /* logo-icon.png */; };
 		77055FB613D0E5CA009DD63A /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 77055FB413D0E5CA009DD63A /* logo.png */; };
 		77156DB1137F0351005EF746 /* CCBSpriteSheetParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 77156DB0137F0351005EF746 /* CCBSpriteSheetParser.m */; };
@@ -739,6 +740,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		5296B22A183A7B44003D8F86 /* CocosBuilder.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = CocosBuilder.icns; sourceTree = "<group>"; };
 		77055FB313D0E5CA009DD63A /* logo-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo-icon.png"; sourceTree = "<group>"; };
 		77055FB413D0E5CA009DD63A /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 		77156DAF137F0351005EF746 /* CCBSpriteSheetParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCBSpriteSheetParser.h; sourceTree = "<group>"; };
@@ -2040,6 +2042,7 @@
 		7789ABB3133AA82000CEFCC7 = {
 			isa = PBXGroup;
 			children = (
+				5296B22A183A7B44003D8F86 /* CocosBuilder.icns */,
 				E3D08A321524581100E55891 /* README.md */,
 				E3D59118150F50D1004180CA /* AUTHORS */,
 				E395DC7D1511FDF70075979E /* CHANGELOG */,
@@ -3964,6 +3967,7 @@
 				E3E8B49015791FFB00373983 /* seq-tl-mark-origin.png in Resources */,
 				E3E8B4921579326A00373983 /* seq-timedisplay-bg.png in Resources */,
 				E3E8B49915793AF800373983 /* seq-btn-play.png in Resources */,
+				5296B22B183A7B44003D8F86 /* CocosBuilder.icns in Resources */,
 				E3E8B49A15793AF800373983 /* seq-btn-restart.png in Resources */,
 				E3E8B49B15793AF800373983 /* seq-btn-run.png in Resources */,
 				E3E8B49C15793AF800373983 /* seq-btn-stepback.png in Resources */,
