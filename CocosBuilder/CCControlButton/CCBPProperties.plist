@@ -75,6 +75,64 @@
 		</dict>
 		<dict>
 			<key>default</key>
+			<string></string>
+			<key>affectsProperties</key>
+			<array>
+				<string>contentSize</string>
+			</array>
+			<key>displayName</key>
+			<string>Font file</string>
+			<key>type</key>
+			<string>FntFile</string>
+			<key>name</key>
+			<string>titleBMFont|1</string>
+		</dict>
+
+<!--
+		<dict>
+			<key>defaultSerialization</key>
+			<integer>255</integer>
+			<key>animatable</key>
+			<true/>
+			<key>default</key>
+			<integer>255</integer>
+			<key>displayName</key>
+			<string>Opacity</string>
+			<key>type</key>
+			<string>Byte</string>
+			<key>name</key>
+			<string>opacity</string>
+		</dict>
+		<dict>
+			<key>defaultSerialization</key>
+			<array>
+				<integer>255</integer>
+				<integer>255</integer>
+				<integer>255</integer>
+			</array>
+			<key>animatable</key>
+			<true/>
+			<key>default</key>
+			<array>
+				<integer>255</integer>
+				<integer>255</integer>
+				<integer>255</integer>
+			</array>
+			<key>displayName</key>
+			<string>Color</string>
+			<key>type</key>
+			<string>Color3</string>
+			<key>name</key>
+			<string>color</string>
+		</dict>
+-->
+
+
+<!-- next two are used with ttf fonts -- note to self: avoid using CCLabelTTF as it 
+doesn't translate well to Android -->
+<!--
+		<dict>
+			<key>default</key>
 			<string>Helvetica</string>
 			<key>affectsProperties</key>
 			<array>
@@ -102,6 +160,9 @@
 			<key>name</key>
 			<string>titleTTFSize|1</string>
 		</dict>
+-->
+
+
 		<dict>
 			<key>type</key>
 			<string>Point</string>
